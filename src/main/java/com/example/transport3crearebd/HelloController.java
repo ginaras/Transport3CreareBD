@@ -21,17 +21,18 @@ public class HelloController implements Initializable {
 
     Connection connectionFirst = DriverManager.getConnection(URL, USER, PASSWORD);
     Statement statementINV = connectionFirst.createStatement();
+//
+//    public static String bazaDeDate = "auto_1stDemoPublic2304";
+//    public static String backUpbazaDeDate = "auto_1stDemoPublic2304Bbackup";
+//    public static String USER=  "auto_1stDemoPublic";
+//    public static String PASSWORD=  "pas@1stDemoPubliC";
 
-    public static String bazaDeDate = "auto_1stDemoPublic2304";
-    public static String backUpbazaDeDate = "auto_1stDemoPublic2304Bbackup";
-    public static String USER=  "auto_1stDemoPublic";
-    public static String PASSWORD=  "pas@1stDemoPubliC";
-
-//    public static String bazaDeDate = "autoNelYFunDa250223";
-//    public static String backUpbazaDeDate = "autoNelYFunDa250223Bbackup";
-//    public static String USER=  "aUtONeli";
-//    public static String PASSWORD=  "pas@NeLy2gynLog23";
-    public static String SERVER="95.214.135.69";
+    public static String bazaDeDate = "autoNelYFunDa250223";
+    public static String backUpbazaDeDate = "autoNelYFunDa250223Bbackup";
+    public static String USER=  "aUtONeli";
+    public static String PASSWORD=  "pas@NeLy2gynLog23";
+//    public static String SERVER="95.214.135.69";
+    public static String SERVER="localhost";
     public static String PORT = "3306";
 
     public static String CREATEUSERNAME = "CREATE USER IF NOT EXISTS "+USER+"@"+SERVER+" identified by "+PASSWORD+" ";
@@ -52,7 +53,7 @@ public class HelloController implements Initializable {
     public static final String CREATE_RCA_ITP_AURORIZARI= "CREATE TABLE IF NOT EXISTS rcaITP (nrCrt INT(5) AUTO_INCREMENT PRIMARY KEY, document VARCHAR (20), nrInmatriculare VARCHAR (12), tipDocument VARCHAR(20), nrDoc VARCHAR (20), dataDoc DATE, dataExpirare DATE, durataRamasaTemp INT (4), valoare DOUBLE, inlocuita INT (4), operare VARCHAR (100) )";
     public static final String CREATE_LISTA_DOCUMENTE= "CREATE TABLE IF NOT EXISTS listaDocumente (nrCrtLista INT(2), denDoc VARCHAR (50), inactiv VARCHAR (2) )";
     public static final String CREATE_TABLE_FACTURI_CARBURANTI="CREATE TABLE IF NOT EXISTS factCarburant ( nrCrt INT (6) AUTO_INCREMENT PRIMARY KEY, furnizor VARCHAR(70), nrFactura VARCHAR(10), dataFactura DATE, tipCombustibil VARCHAR(12), cantitate VARCHAR(7), pretUnitar VARCHAR(15), operare VARCHAR (100) )";
-    public static final String CREATE_CONSUM_CARBURANTI= "CREATE TABLE IF NOT EXISTS consumCarburant (nrCrtCombust INT(6) AUTO_INCREMENT PRIMARY KEY, nrInmatriculare VARCHAR (12), tipCombustibil VARCHAR(20), cantitate  VARCHAR (6), kmLaAlimentare VARCHAR (7), dataAlimentarii DATE, operare VARCHAR (100)  )";
+    public static final String CREATE_CONSUM_CARBURANTI= "CREATE TABLE IF NOT EXISTS consumCarburant (nrCrtCombust INT(6) AUTO_INCREMENT PRIMARY KEY, nrInmatriculare VARCHAR (12), tipCombustibil VARCHAR(20), cantitate  VARCHAR (6), kmLaAlimentare VARCHAR (7), consum DOUBLE, dataAlimentarii DATE, operare VARCHAR (100)  )";
     public static final String CREATE_PIESE= "CREATE TABLE IF NOT EXISTS piese (nrCrtPiese INT(5) AUTO_INCREMENT PRIMARY KEY, furnizor VARCHAR (50), nrFactura VARCHAR (20), dataFactura DATE, piesa VARCHAR(50), pret VARCHAR (10), bonConsum VARCHAR(20), dataBonConsum DATE, nrInmatriculare VARCHAR (12), operare VARCHAR (100) )";
     public static final String CREATE_TABLE_RESP_PRIVILEGE = "CREATE TABLE IF NOT EXISTS respPrivilege (nrCrt INT (3) AUTO_INCREMENT PRIMARY KEY, respProiect VARCHAR(50), macNr VARCHAR(17), adminu CHAR(10), sex CHAR (1), inactiv VARCHAR (3), rezerva1 VARCHAR (50))";
     public static final String CREATE_TABLE_AUTORIZARI_AUTO = "CREATE TABLE IF NOT EXISTS autorizariAuto ( nrCrt INT(4) AUTO_INCREMENT PRIMARY KEY, nrInmatriculare VARCHAR (12), tipAutorizatie VARCHAR (30), nrDocumentAutorizare VARCHAR (20), dataAutorizarii DATE, dataExpirariiAutorizarii DATE, valoare VARCHAR (12), operare VARCHAR (100))";
